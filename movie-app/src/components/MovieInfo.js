@@ -6,24 +6,36 @@ const MovieInfo = ({ movie }) => {
     const [isFavorite, setIsFavorite] = useState(false);
 
   useEffect(() => {
-    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    setIsFavorite(storedFavorites.includes(movie.id));
+    const checkIfFavorite = () => {
+        const storedFavorites = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
+        const isFav = storedFavorites.some((fav) => fav.id === movie.id);
+        setIsFavorite(isFav);
+    };
+    checkIfFavorite();
   }, [movie.id]);
 
-  const toggleFavorite = () => {
-    const storedFavorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    let updatedFavorites;
+  const toggleFavorite = (e) => {
+    const storedFavorites = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
+    const isFav = storedFavorites.some((fav) => fav.id === movie.id);
 
-    if (isFavorite) {
-      updatedFavorites = storedFavorites.filter((id) => id !== movie.id);
+    let updatedFavorites;
+    if (isFav) {
+      updatedFavorites = storedFavorites.filter((fav) => fav.id !== movie.id);
     } else {
-      updatedFavorites = [...storedFavorites, movie.id];
+      const movieData = {
+        id: movie.id,
+        title: movie.title,
+        poster_path: movie.poster_path,
+        overview: movie.overview,
+        vote_average: movie.vote_average,
+        release_date: movie.release_date,
+      };
+      updatedFavorites = [...storedFavorites, movieData];
     }
 
-    localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
-    setIsFavorite(!isFavorite);
+    localStorage.setItem("favoriteMovies", JSON.stringify(updatedFavorites));
+    setIsFavorite(!isFav);
   };
-
     return (
         <div className="movie-info-card">
             <Link to={`/movie/${movie.id}`} style={{ textDecoration: 'none'}}>
@@ -32,7 +44,10 @@ const MovieInfo = ({ movie }) => {
                 <p>{movie.overview}</p>  
             </Link>
             <button
-                onClick={toggleFavorite}
+                onClick={(e) => {
+                    e.preventDefault();
+                    toggleFavorite();
+                }}
                 style={{
                 background: "none",
                 border: "none",
