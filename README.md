@@ -2,10 +2,10 @@
 This project is a web application focused primarily on a modern and responsive user interface for displaying data so main effort was placed on the front-end user experience.
 
  **Features:**
-[x]Movie List Display: Retrieve and display a list of trending movies from the TMDB API.
-[x]Movie Details Navigation: Implement navigation to a detailed information page for a selected movie using the /movie/{movie_id} endpoint.
-[x]Favorite Movies: Enable users to mark movies as favorites, storing this information locally and ensuring persistence across sessions.
-[x]Caching: Implement caching for the trending movie lists to ensure movies are fetched once and stored locally, improving performance.
+[x]   Movie List Display: Retrieve and display a list of trending movies from the TMDB API.
+[x]   Movie Details Navigation: Implement navigation to a detailed information page for a selected movie using the /movie/{movie_id} endpoint.
+[x]   Favorite Movies: Enable users to mark movies as favorites, storing this information locally and ensuring persistence across sessions.
+[x]   Caching: Implement caching for the trending movie lists to ensure movies are fetched once and stored locally, improving performance.
 
 
 ## Compilation
