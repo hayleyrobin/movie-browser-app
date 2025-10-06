@@ -1,0 +1,28 @@
+[
+  {
+    "id": 634649,
+    "title": "Spider-Man: No Way Home",
+    "overview": "Peter Parker's secret identity is revealed, bringing his Super Hero responsibilities into conflict with his normal life and putting those he cares about most at risk.",
+    "release_date": "2021-12-15",
+    "runtime": 148,
+    "genres": [
+      { "id": 28, "name": "Action" },
+      { "id": 12, "name": "Adventure" },
+      { "id": 878, "name": "Science Fiction" }
+    ],
+    "poster_path": "/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg"
+  },
+  {
+    "id": 675353,
+    "title": "Sonic the Hedgehog 2",
+    "overview": "After settling in Green Hills, Sonic is eager to prove he has what it takes to be a true hero.",
+    "release_date": "2022-04-08",
+    "runtime": 148,
+    "genres": [
+      { "id": 28, "name": "Action" },
+      { "id": 12, "name": "Adventure" },
+      { "id": 35, "name": "Comedy" }
+    ],
+    "poster_path": "/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg"
+  }
+]
