@@ -1,38 +1,69 @@
-.App {
+/* Layout for homepage */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+/* Individual movie info previews */
+.movie-info-card {
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
   text-align: center;
+  transition: transform 0.2s ease;
+}
+.movie-info-card:hover {
+  transform: scale(1.03);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.movie-info-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.movie-info-card h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.movie-info-card p {
+  font-size: 14px;
+  color: #ccc;
+  overflow:visible;
 }
 
-.App-link {
-  color: #61dafb;
+/* Loading message */
+p {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #fff;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Full movie detail page */
+.movie-detail {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  color: #fff;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+}
+.movie-detail img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.movie-detail h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.movie-detail p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ccc;
+  margin-bottom: 10px;
 }
