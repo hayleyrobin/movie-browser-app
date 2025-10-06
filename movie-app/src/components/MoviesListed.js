@@ -1,12 +1,11 @@
-import MovieDetails from "./MovieDetails";
+import MovieInfo from "./MovieInfo";
 
 function MoviesListed ({movies}) {
     return (
-        <div>
+        <div className="movie-grid">
             {movies.map((movie) => (
-                <MovieDetails key={movie.id} movie={movie} />
-                ))}
-
+                <MovieInfo key={movie.id} movie={movie} />
+            ))}
         </div>
     );
 };
