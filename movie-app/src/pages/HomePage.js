@@ -1,23 +1,23 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import MoviesListed from '../components/MoviesListed';
+import { getTrendingMovies } from '../api/tmdb';
 
 
-const HomePage = () => {
-    // const [movies, setMovies] = useState([]);
-    return (
-        <div style={{ padding: '2rem' }}>
-            <h1>Welcome to Movie App</h1>
-            <p>Discover and explore your favorite movies!</p>
-            <h2>Trending Movies</h2>
-            <MoviesListed />    
-            {/* <ul>
-                {movies.map(movie => (
-                    <li key={movie.id}>{movie.title} ({movie.release_date} {movie.poster_path})</li>
-                ))}
-            </ul> */}
+function HomePage() {
+    const [movies, setMovies] = useState([]);
+    const [loading, setLoading] = useState(true);
 
-        </div>
-    );
+    useEffect(() => {
+        async function fetchMovies() {
+            const data = await getTrendingMovies();
+            setMovies(data);
+            setLoading(false);
+            console.log(data);
+        }
+        fetchMovies();
+    }, []);
+    if (loading) return <div>Loading...</div>;  
+    return <MoviesListed movies={movies} />;
 };
 
 export default HomePage;
