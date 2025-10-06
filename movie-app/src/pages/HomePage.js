@@ -17,7 +17,13 @@ function HomePage() {
         fetchMovies();
     }, []);
     if (loading) return <div>Loading...</div>;  
-    return <MoviesListed movies={movies} />;
+    return (
+        <div>
+            <h1 className='favorites-page'>Trending Movies</h1>
+            <MoviesListed movies={movies} />;
+        </div>
+        
+    );
 };
 
 export default HomePage;
