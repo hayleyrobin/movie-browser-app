@@ -1,0 +1,37 @@
+[
+  {
+    "page": 1,
+    "results": [
+      {
+        "id": 634649,
+        "title": "Spider-Man: No Way Home",
+        "overview": "Peter Parker's secret identity is revealed, bringing his Super Hero responsibilities into conflict with his normal life and putting those he cares about most at risk.",
+        "release_date": "2021-12-15",
+        "poster_path": "/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg"
+      },
+      {
+        "id": 675353,
+        "title": "Sonic the Hedgehog 2",
+        "overview": "After settling in Green Hills, Sonic is eager to prove he has what it takes to be a true hero.",
+        "release_date": "2022-04-08",
+        "poster_path": "/6DrHO1jr3qVrViUO6s6kFiAGM7.jpg"
+      },
+      {
+        "id": 580489,
+        "title": "Venom: Let There Be Carnage",
+        "overview": "Eddie Brock struggles to adjust to his new life as the host of the alien symbiote Venom, while serial killer Cletus Kasady also becomes host to an alien symbiote.",
+        "release_date": "2021-09-30",
+        "poster_path": "/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg"
+      },
+      {
+        "id": 634528,
+        "title": "The Batman",
+        "overview": "In his second year of fighting crime, Batman uncovers corruption in Gotham City that connects to his own family.",
+        "release_date": "2022-03-04",
+        "poster_path": "/74xTEgt7R36Fpooo50r9T25onhq.jpg"
+      }
+    ],
+    "total_pages": 1,
+    "total_results": 4
+  }
+]
