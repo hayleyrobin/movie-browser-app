@@ -1,9 +1,9 @@
 /* Layout for homepage */
 .movie-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(150px, 1fr));
-  gap: 10px;
-  padding: 10rem;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 30px;
 }
 
 /* Individual movie info previews */
