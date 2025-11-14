@@ -5,23 +5,23 @@ import { useState, useEffect } from 'react';
 const MovieInfo = ({ movie }) => {
     const [isFavorite, setIsFavorite] = useState(false);
 
-  useEffect(() => {
+  useEffect(() => { // Check if the movie is already a favorite
     const checkIfFavorite = () => {
         const storedFavorites = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
         const isFav = storedFavorites.some((fav) => fav.id === movie.id);
         setIsFavorite(isFav);
     };
-    checkIfFavorite();
+    checkIfFavorite(); 
   }, [movie.id]);
 
-  const toggleFavorite = (e) => {
+  const toggleFavorite = (e) => { // Add or remove movie from favorites
     const storedFavorites = JSON.parse(localStorage.getItem("favoriteMovies")) || [];
     const isFav = storedFavorites.some((fav) => fav.id === movie.id);
 
-    let updatedFavorites;
-    if (isFav) {
-      updatedFavorites = storedFavorites.filter((fav) => fav.id !== movie.id);
-    } else {
+    let updatedFavorites; 
+    if (isFav) { 
+      updatedFavorites = storedFavorites.filter((fav) => fav.id !== movie.id); // Remove from favorites 
+    } else { // Add to favorites
       const movieData = {
         id: movie.id,
         title: movie.title,
@@ -30,10 +30,10 @@ const MovieInfo = ({ movie }) => {
         vote_average: movie.vote_average,
         release_date: movie.release_date,
       };
-      updatedFavorites = [...storedFavorites, movieData];
+      updatedFavorites = [...storedFavorites, movieData]; // Add to favorites
     }
 
-    localStorage.setItem("favoriteMovies", JSON.stringify(updatedFavorites));
+    localStorage.setItem("favoriteMovies", JSON.stringify(updatedFavorites)); // Update localStorage
     setIsFavorite(!isFav);
   };
     return (
