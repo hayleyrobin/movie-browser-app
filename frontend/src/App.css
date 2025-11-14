@@ -1,0 +1,93 @@
+/* Layout for homepage */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 30px;
+}
+
+/* Individual movie info previews */
+.movie-info-card {
+  background-color: #1c1c1c;
+  border-radius: 10px;
+  padding: 10px;
+  color: #fff;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.movie-info-card:hover {
+  transform: scale(1.03);
+}
+
+.movie-info-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.movie-info-card h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.movie-info-card p {
+  font-size: 14px;
+  color: #ccc;
+  overflow:visible;
+}
+
+/* Loading message */
+p {
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #fff;
+}
+
+/* Full movie detail page */
+.movie-detail {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  color: #fff;
+  background-color: #1c1c1c;
+  border-radius: 10px;
+}
+.movie-detail img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.movie-detail h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.movie-detail p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  background-color: #111;
+  padding: 1rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+/* Favorites */
+.favorites-page {
+  padding: 2rem;
+  text-align: center;
+}
