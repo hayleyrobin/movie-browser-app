@@ -1,42 +1,38 @@
 // entry point for backend server - connects to database and starts server
-const express = require('express');
-const postgres = require('pg');
-const cors = require('cors');
-require('dotenv').config(); // Load environment variables
+
+const express = require('express'); // API server framework
+const cors = require('cors'); // allow frontend to access backend APIs
+const dotenv = require('dotenv'); 
+const movieRoutes = require('./routes/movieRoutes.js');
+
+dotenv.config(); // Load environment variables
 
 const app = express(); // Initialize express app
+const pool = require('./db/db.js'); // Import the database connection pool
 
-// Middleware
+// Middleware - will be executed for every request
 app.use(cors()); // Enable CORS for all routes
-app.use(express.json()); // Parse JSON request bodies  
+app.use(express.json()); // parse data sent in request body as JSON
 
-// Connect to PostgreSQL
-const pool = new postgres.Pool({ // Use connection string from environment variable
-    connectionString: process.env.DATABASE_URL,
-});
-
-pool.connect()
-    .then(() => console.log('PostgreSQL connected'))
-    .catch(err => console.log(err));
-
-// Sample route
+// Routes
 app.get('/', (req, res) => {
     res.send('Welcome to the Movie Browser API');
 });
 
-// example route to get movies from database
-app.get('/movies', async (req, res) => {
-    try {
-        const result = await pool.query('SELECT * FROM movies');
-        res.json(result.rows);
-    } catch (err) {
-        console.error(err);
-        res.status(500).send('Server error fetching movies');
-    }
+app.get("/api/test-db", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT NOW()");
+    res.json(result.rows[0]);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "DB test failed" });
+  }
 });
 
-const PORT = 5001;
-// Start server
+app.use('/api/movies', movieRoutes);
+
+// Define the port and start the server
+const PORT = process.env.PORT || 5001; // Use environment variable or default to 5001
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
